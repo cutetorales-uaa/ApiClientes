@@ -1,0 +1,129 @@
+CREATE DATABASE Parcial;
+GO
+
+USE Parcial;
+GO
+
+CREATE TABLE Cliente (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Apellido VARCHAR(100) NOT NULL,
+    Email VARCHAR(150) NOT NULL,
+    Telefono VARCHAR(30) NOT NULL
+);
+GO
+
+ API REST - Gestión de Clientes
+
+## Descripción
+
+Proyecto desarrollado para implementar una API REST destinada a la gestión
+de clientes mediante operaciones CRUD.
+
+La aplicación permite crear, consultar, modificar y eliminar clientes
+almacenados en una base de datos SQL Server.
+
+Cada cliente posee los siguientes atributos:
+
+- Id
+- Nombre
+- Apellido
+- Email
+- Teléfono
+
+## Tecnologías utilizadas
+
+- Visual Basic .NET
+- ASP.NET Core Web API
+- Entity Framework Core
+- SQL Server
+- Visual Studio
+- Postman
+- Git
+- GitHub
+
+## Base de datos
+
+La aplicación utiliza SQL Server y una base de datos denominada `Parcial`.
+
+La tabla `Cliente` contiene los siguientes campos:
+
+| Campo | Tipo |
+|---|---|
+| Id | INT IDENTITY PRIMARY KEY |
+| Nombre | VARCHAR(100) |
+| Apellido | VARCHAR(100) |
+| Email | VARCHAR(150) |
+| Telefono | VARCHAR(30) |
+
+
+## Endpoints
+
+### Obtener todos los clientes
+
+GET `/api/clientes`
+
+Obtiene todos los clientes registrados.
+
+### Obtener cliente por ID
+
+GET `/api/clientes/{id}`
+
+Ejemplo:
+
+GET `/api/clientes/1`
+
+### Crear cliente
+
+POST `/api/clientes`
+
+Ejemplo de solicitud:
+
+```json
+{
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "email": "juan.perez@gmail.com",
+  "telefono": "0981123456"
+}
+
+Eliminar cliente
+
+DELETE /api/clientes/{id}
+
+Ejemplo:
+
+DELETE /api/clientes/1
+
+Ejecución del proyecto
+Clonar o descargar este repositorio.
+Abrir la solución en Visual Studio.
+Ejecutar el archivo SQL/CrearBaseDatos.sql en SQL Server.
+Verificar la cadena de conexión en appsettings.json.
+Restaurar las dependencias del proyecto.
+Compilar la solución.
+Ejecutar el proyecto desde Visual Studio.
+Utilizar Postman para probar los endpoints.
+
+La dirección y el puerto de la API dependerán de la configuración local.
+
+Por ejemplo:
+
+https://localhost:7000/api/clientes
+
+Evidencias
+
+Las capturas correspondientes a las pruebas realizadas se encuentran
+en la carpeta Evidencias.
+
+Se incluyen pruebas de:
+
+POST
+GET
+GET por ID
+PUT
+DELETE
+Verificación de registros en SQL Server
+Autor
+
+Alvaro Torales
